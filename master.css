@@ -10,7 +10,7 @@
 /*font-family: 'Open Sans', sans-serif;*/
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
-
+/* end of typography*/
 
 :root {
     /*color scheme*/
@@ -28,9 +28,12 @@
             --cyan:hsl(176, 68%, 64%);
             --blue:hsl(198, 60%, 50%);
         /*Netural color*/
-        --white:hsl(0, 0%, 100%);
-    /* end of color scheme*/
+            --white:hsl(0, 0%, 100%);
+    /*End of color scheme*/
 }
+
+
+/*default styles / resets*/
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -45,6 +48,11 @@ html {
 body {
     padding:0;
     margin:0;
+    background-color:darkblue;
+    background-color:var(--dark-blue-main-1);
+
+    color:#fff;
+    color:var(--white);
 }
 
 
@@ -52,3 +60,23 @@ h1,h2,h3,
 h4,h5,h6 {
     font-family: 'Raleway', sans-serif;
 }
+
+img {
+    display:block;
+    max-width:100%;
+}
+
+ul { list-style:none; }
+    
+a { color:currentColor; }
+    
+
+
+
+/*start of website styling*/
+
+
+
+/*start of navbar*/
+
+/*end of navbar*/
