@@ -45,6 +45,7 @@ html {
     box-sizing: inherit;
     line-height:1.4;
     font-size:14px;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -361,6 +362,7 @@ P {
 
 /*start of footer*/
 .footer {
+    
     color:var(--white-dark);
     padding-bottom:3rem; 
 }
@@ -491,8 +493,14 @@ P {
 
     .get-started--btn:hover {
         cursor: pointer;
-        filter:brightness(0.90);
+        filter:brightness(1.075);
+        
     }
+
+    .get-started--btn:active {
+        background-image:linear-gradient(45deg, var(--blue), var(--cyan));
+    }
+
     /*end of buttons*/
 /*end of utilites*/
 
@@ -514,15 +522,7 @@ P {
 }
 
 
-
-/* Laptop view : 1024px
-@media(min-width:1024px) {
-
-
-} */
-
-
-/*Laptop Large view : 1440px*/
+/*Laptop  view : 1024px*/
 @media(min-width:1024px) {
 /*start of navbar*/
 .navbar {
@@ -541,9 +541,16 @@ P {
     color:var(--white-gray);  
 }
 
+
 .navbar__item {
     padding:0 1rem;
 } 
+
+
+.navbar__item:hover {
+    cursor:pointer;
+    color:var(--white);
+}
 
 .navbar__item:first-of-type {
     padding-left:0;
@@ -723,7 +730,7 @@ P {
 .testimonials {
     display:flex;
     justify-content: space-evenly;
-    margin:0 4rem 12rem 4rem;
+    margin:0 4rem;
     /* margin-bottom:12rem; */
     position: relative;
 }
@@ -779,6 +786,9 @@ P {
 
 /*start of .get-access*/
 .get-access {
+    position: relative;
+    top:180px;
+
     background-color:var(--dark-blue-various-1);
     width:60%;
     margin:0 auto 4rem auto;
@@ -787,6 +797,7 @@ P {
     text-align:center; 
 
     box-shadow: 0px 5px 35px #111;
+    z-index:500;
 }
 
 .get-access__header {
@@ -821,9 +832,145 @@ P {
 
 /*start of footer*/
 .footer {
+    position: relative;
+    background-color: var(--dark-blue-footer-1);
     color:var(--white-dark);
-    padding-bottom:3rem; 
+    padding:12rem 0 3rem 0; 
+}
+
+.footer-logo-container {
+    display:flex;
+    justify-content: flex-start;
+    margin-bottom:2rem;
+}
+
+.footer-fylo__logo {
+    width:8rem;
+    /* margin-left:6vw; */
+    margin-left:0.5vw; 
+}
+
+.footer__info {
+    display:flex;
+    justify-content: space-evenly;
+    align-items:flex-start;
+}
+
+.footer__info-text {
+    position: relative;
+    margin:0;
+    width:36ch;
+}
+.footer__info-text::before {
+    background-image: url("fylo-dark-landing-page-master/images/icon-location.svg");
+}
+
+/*contact info*/
+.footer__info-text,
+.footer__info__contact  {
+    margin-left:0vw;
+}
+
+.footer__info__contact {
+    display:flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.footer__info__contact__phone {
+    position: relative;
+    width:20rem;
+    margin-bottom:1rem;
+}
+
+.footer__info__contact__phone::before {
+    background-image: url("fylo-dark-landing-page-master/images/icon-phone.svg");
+    background-position: left center;
+    background-size:0.85rem;
+}
+
+.footer__info__contact__email {
+    position: relative;
+    width:20rem;
+}
+
+.footer__info__contact__email::before {
+    background-image: url("fylo-dark-landing-page-master/images/icon-email.svg");
+    background-position: left center;
+    background-size:1.15rem;
+}
+
+/*about us, contact us, terms,ect...*/
+.footer__nav {
+    margin-top:0rem;
+    margin-bottom:0rem;
+
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer__nav ul {
+    padding:0;
+    margin-left:0vw;
+    margin-top:-0.25rem;
+}
+
+.footer__nav-item { 
+    padding:0.5rem 0;
+}
+.footer__nav-items-1,
+.footer__nav-items-2 { 
+    margin-top:0rem;
 }
 
 
+/*social links (facebook, twitter, ect..)*/
+.social-links {
+    display:flex;
+    justify-content: unset;
 }
+
+.social-link {
+    border-radius:50%;
+    border:1px solid white;
+    padding:5px;
+    margin:0 5px;
+    transition:transform 0.5s ease;
+}
+
+/*spin / hover effect on social media links*/
+.social-link:hover {
+    filter:brightness(1.15);
+    transform: rotate(360deg) scale(1.3);
+    transition:transform 0.5s ease;
+}
+/*end of footer*/
+
+}
+
+
+/* Laptop Large view : 1440px*/
+@media(min-width:1440px) {
+
+    .main-content {
+        width:calc(60rem + 5vw);
+}
+
+    .footer-fylo__logo {
+        width:8rem;
+        margin-left:6vw;
+    }
+        
+} 
+
+
+
+/* Desktop view : 1920px*/
+@media(min-width:1920px) {
+
+    .footer-fylo__logo {
+        width:8rem;
+        margin-left:8vw;
+    }
+        
+} 
